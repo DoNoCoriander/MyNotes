@@ -32,9 +32,7 @@ function Toolbar(props) {
 function ThemedButton(props) {
   // 第三步：使用共享 Context
   const theme = useContext(ThemeContext);
-  render() {
     return <Button theme={theme} />;
-  }
 }
 ```
 
@@ -95,7 +93,7 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
   npm install customize-cra  react-app-rewired --save-dev
   ```
 
-- 在根目录下创建一个文件名为 config-overrrides.js 
+- 在根目录下创建一个文件名为 config-overrides.js 
 
   - react-app-rewired    覆盖create-react-app命令的默认配置
 
