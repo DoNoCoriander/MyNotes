@@ -1,4 +1,4 @@
-#                                     **REACT**
+#                                                                       **REACT**
 
 ## Hooks
 
@@ -193,3 +193,26 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
 - 在 `src` 下创建文件 `src/styles/index.less` 和 `src/styles/variables.less`，这两个文件用于定义全局的主题样式
 
 #### 问题 ： 改变主题后刷新页面页面的主题会变回原来的样子
+
+​			 	在根组件渲染的时候确定页面的主题
+
+
+
+### 一些方法
+
+#### 1.react格式化日期：
+
+- 引入插件moment
+
+```js
+npm install moment --save
+```
+
+- 引入moment 并调用format方法
+
+```js
+import moment from 'moment'
+当前时间：moment().format('YYYY-MM-DD HH:mm:ss')
+时间格式化：moment(datetime).format('YYYY-MM-DD')
+```
+
