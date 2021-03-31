@@ -6,11 +6,10 @@
 
 flex-direction: row;   
 
-<img src="C:\Users\sqoz2t6\AppData\Roaming\Typora\typora-user-images\image-20210331134648035.png" alt="image-20210331134648035" style="zoom:33%;" />
+![image](https://user-images.githubusercontent.com/73156828/113105676-6ecfd100-9234-11eb-943c-9ee3ddf53109.png)
 
 flex-direction: column; 
 
-![image-20210331134746578](C:\Users\sqoz2t6\AppData\Roaming\Typora\typora-user-images\image-20210331134746578.png)
 
 row-reverse和column-reverse都是把代码块的顺序给反转过来（就是从块最右边开始排）
 
