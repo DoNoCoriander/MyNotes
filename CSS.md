@@ -20,3 +20,16 @@ row-reverse和column-reverse都是把代码块的顺序给反转过来（就是�
 可以自适应布局  动态计算位置
 
 height :  calc(100% - 100px)   代表高度为其父元素的整个宽度减去100像素
+
+3.em
+
+相对单位 参考是父元素的font-size  如果字体大小是16px那么1em就是16px
+
+### 一些简单样式
+
+ 	1. 文字在元素中的居中
+     - line-height 属性设置成和父元素的height保持一致（得显式设置px）适用于单行文字
+     - 父组件display设置为table或者table-cell （inline 或者inline-block）子元素设置属性vertical-align: middle;适用于多行文字
+     - 设置padding
+ 	2. 
+

@@ -198,6 +198,20 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
 
 
 
+## 关于antd
+
+1.antd的国际化 但是日期组件的星期和月份还是英语问题
+
+```react
+import zhCN from "antd/lib/locale/zh_CN";
+import "moment/locale/zh-cn" //加上这么一句即可 // 或者使用yarn install moment不要使用npm
+<ConfigProvider locale = {zhCN}>
+    <App location = {window.location} />
+</ConfigProvider>
+```
+
+
+
 ### 一些方法
 
 #### 1.react格式化日期：
