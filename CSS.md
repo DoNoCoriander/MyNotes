@@ -95,11 +95,11 @@ hr{
 div {
 	height : ,
 	width : ,
-	overflow : scroll // 表示无论是不是需要滚动条 都会显示
-					  // visible（默认值） 表示内容不会被修剪 会显示在元素的外面
-					  // hidden 内容会被修剪 并且不可见
-					  // auto 如果内容需要滚动条 会自动出现
-					  // inherit 从父元素继承overflow的值
+	overflow : scroll  // 表示无论是不是需要滚动条 都会显示
+			   // visible（默认值） 表示内容不会被修剪 会显示在元素的外面
+			   // hidden 内容会被修剪 并且不可见
+			   // auto 如果内容需要滚动条 会自动出现
+			   // inherit 从父元素继承overflow的值
 	overflow-x : 表示水平方向上的滚动条属性
 	overflow-y : 表示垂直方向的滚动条的属性
 }
