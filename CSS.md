@@ -27,11 +27,41 @@ height :  calc(100% - 100px)   代表高度为其父元素的整个宽度减去1
 
 ### 二.一些简单样式
 
-##### 1.文字在元素中的居中
+##### 1.元素的居中
 
- - line-height 属性设置成和父元素的height保持一致（得显式设置px）适用于单行文字
- - 父组件display设置为table或者table-cell （inline 或者inline-block）子元素设置属性vertical-align: middle;适用于多行文字
- - 设置padding
+###### 1.1 行级元素
+
+​		1.1.1 行内包含特殊元素 ： 图片 输入框 inline-block元素
+
+```js
+		vertical-align : middle
+```
+
+​		1.1.2 设置line-height 使其和height值相等（必须要显示定义出来px）可以实现行级元素或者纯文本的块级元素的垂直居中
+
+###### 1.2块级元素
+
+​		1.2.1  父元素内设置display ： flex; align-item : center (兼容性比较差)
+
+​		1.2.2  父元素设置 display ： flex; 子元素设置： align-self : center
+
+​		1.2.3  父元素设置相对定位position: relative; 
+
+​				   子元素设置绝对定位postion: absolute; top: 0; left:0; bottom: 0; right: 0; margin: auto;
+
+​					关键在于设置top: 0; left:0; bottom: 0; right: 0; margin: auto表示水平、垂直4个方向的margin值都通过计算获取
+
+​		1.2.4   利用父元素相对定位，子元素绝对定位，并且处置、水平方向个偏移50%  (子元素利用负值margin偏移自身宽度、长度的一半)
+
+​		1.2.5  父元素添加： display: table-cell; verticle-align: middle;
+
+​		1.2.6 使用绝对定位的translate()属性
+
+```javascript
+		父元素设置{ position: relative; }
+		子元素设置{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, 50%) }
+```
+
 ##### 2.&符号
 
 ```javascript
