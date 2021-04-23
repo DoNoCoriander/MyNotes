@@ -135,6 +135,34 @@ div {
 }
 ```
 
+##### 5.两个兄弟元素的叠加显示
+
+```html
+<div className = "father">
+    <div className = "bro1"></div>
+    <div className = "bro2"></div>
+</div>
+.father {
+	position : 'relative'
+}
+.bro1 {
+	position : 'absolute';
+	z-index : 999(设置的大一点)
+	// 添加一些其他样式 调整其的位置
+}
+```
+
+##### 6.超出元素大小的文字用省略号显示
+
+```javascript
+    text-overflow: ellipsis; // 超出的部分显示省略号
+    white-space: nowrap; // 不允许文字换行
+    overflow: hidden; // 超出的部分隐藏
+    width : //设置宽度
+```
+
+
+
 ### 三.菜鸟驿站CSS笔记
 
 ##### 	1.CSS背景

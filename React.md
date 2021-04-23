@@ -196,6 +196,8 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
 
 ​			 	在根组件渲染的时候确定页面的主题
 
+## Redux
+
 
 
 ## 关于antd
