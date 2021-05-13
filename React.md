@@ -46,7 +46,7 @@ function ThemedButton(props) {
 const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
 ```
 
-```javascript
+```react
  // 第一个参数：应用的初始化
     const initialState = {count: 0};
 
@@ -67,7 +67,7 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
         const [state, dispatch] = useReducer(reducer, initialState);
         return (
             <>
-                // useReducer会根据dispatch的action，返回最终的state，并触发rerender
+                // useReducer会根据dispatch的action，返回最终的state，并触发render
                 Count: {state.count}
                 // dispatch 用来接收一个 action参数「reducer中的action」，用来触发reducer函数，更新最新的状态
                 <button onClick={() => dispatch({type: 'increment'})}>+</button>
@@ -80,6 +80,40 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
 #### 3.useRef
 
 用处 ： 转发组件    转发子组件的值到父组件中
+
+```react
+// 父组件
+export default function Father () {
+    
+	const refValue = useRef()
+    
+    // refValue.current 就是子组件向父组件返回的值
+    
+    return (
+    	<>
+        	<Children ref = {refValue}></Children>
+        </>
+    )
+} 
+
+// 子组件
+function Children (props, ref) {
+    useImperativeHandle(ref, () => ({
+        // 子组件要向父组件返回的值
+    })[])
+}
+export default forwardRef(Children)
+```
+
+#### 4.useImperativeHandle
+
+向父组件转发子组件的部分值  需要和**useRef**配合使用
+
+基本语法 ：
+
+```react
+useImperativeHandle(ref, createHandle, [deps])
+```
 
 ## REACT动态加载主题
 
@@ -129,6 +163,8 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
     ```
 
     less-loader 版本过高可能会出现错误 推荐使用5.0.0
+    
+    less版本过高也会出现问题 可以降低为@2.7
 
 - 在config-overrides文件中增加less文件配置：
 
@@ -157,7 +193,7 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
   npm install --save antd-theme-generator
   ```
 
-- 在根目录下添加`color.js`文件
+- 在根目录下添加`color.js`文件 (**修改文件的路径系统的文件路径对应起来**)
 
   ```javascript
   const path = require('path');
@@ -191,6 +227,45 @@ const [state, dispatch] = useReducer(reducer(函数), initState(初始状态));
   ```
 
 - 在 `src` 下创建文件 `src/styles/index.less` 和 `src/styles/variables.less`，这两个文件用于定义全局的主题样式
+
+#### 3.修改pulic文件夹下的HTML文件
+
+```html
+<body>
+    <!-- 中间这几行是需要添加的 -->
+    <link rel="stylesheet/less" type="text/css" href="/color.less" />
+    <script>
+        window.less = {
+            async: false,
+            env: 'production'
+        };
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+    <!-- 中间这几行是需要添加的 -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" ></div>
+```
+
+#### 4.动态改变的语法
+
+```react
+ window.less.modifyVars(
+  {
+    '@primary-color': '#aaa',
+    '@menu-dark-item-active-bg':'#aaa',
+    '@link-color': '#aaa',
+    '@text-color':'#aaa',
+    '@btn-primary-bg': '#aaa',
+  }
+)
+.then(() => { 
+  message.success('主题切换成功')
+})
+.catch(error => {
+  message.error(`主题切换失败`);
+  console.log(error)
+});
+```
 
 #### 问题 ： 改变主题后刷新页面页面的主题会变回原来的样子
 
@@ -232,3 +307,4 @@ import moment from 'moment'
 时间格式化：moment(datetime).format('YYYY-MM-DD')
 ```
 
+#### 2.身份证的校验
