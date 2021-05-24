@@ -27,7 +27,7 @@ row-reverse和column-reverse都是把代码块的顺序给反转过来（就是�
 
 ##### 3.容器相关的属性
 
-###### 	1. flex-direction  
+###### 	3. flex-direction  
 
 ​		 改变主轴的方向
 
@@ -38,7 +38,7 @@ row-reverse和column-reverse都是把代码块的顺序给反转过来（就是�
 	Column-reverse // 主轴为垂直方向 起点在下沿
 ```
 
-###### 	1.2 flex-wrap 
+###### 	3.2 flex-wrap 
 
 ​		项目足够多的时候，是否需要换行
 
@@ -48,15 +48,15 @@ row-reverse和column-reverse都是把代码块的顺序给反转过来（就是�
 	wrap-reverse // 换行 第一行在下方
 ```
 
-###### 	1.3 flex-flow 
+###### 	3.3 flex-flow 
 
 ​			是 flex-direction和flex-wrap的简写形式  默认值为 row   nowrap
 
-###### 	1.4 justify-content
+###### 	3.4 justify-content
 
 ​			定义了主轴上面的对齐方式		
 
-```
+```css
 	flex-start // 默认值 左对齐
 	flex-end // 右对齐
 	center // 居中	
@@ -64,6 +64,73 @@ row-reverse和column-reverse都是把代码块的顺序给反转过来（就是�
 	space-around // 每个项目的两侧的间隔都相等 所以项目之间的间隔要比两侧的要大
 ```
 ![image](https://user-images.githubusercontent.com/73156828/119305697-a9397580-bc9b-11eb-8304-1346f76ed7e2.png)
+
+###### 3.5 align-items
+
+​		定义项目在交叉轴上如何对齐
+
+```css
+  flex-start // 交叉轴的起点对齐
+  flex-end // 交叉轴的终点对齐
+  center // 交叉轴的中点对齐
+  baseline // 项目的第一行文字的基线对齐
+  stretch // (默认值) 如果项目未设置高度或者设为auto 将占满整个容器的高度
+  space-between // 两端对齐  项目之间的间隔都相等
+  space-around // 每个项目的两侧的间隔都相等 所以项目之间的间隔要比两侧的要大
+```
+
+###### 3.6 align-content 
+
+​	定义项目在交叉轴上的对齐方式（只有多行是才有效， 将子项作为一个整体）		
+
+##### 4.项目的相关属性
+
+###### 	4.1 order
+
+​		 用来改变项目的顺序
+
+```css
+    .item {
+      order: <integer>;
+    } // order 的值越小 此项目的位置越靠前
+```
+
+###### 	4.2 flex-grow
+
+​			定义项目的放大比例，默认为零（即使存在剩余空间也不放大）		
+
+```css
+	.item {
+      flex-grow: <number>; /* default 0 */
+    }  // 如果有剩余空间的话才会生效
+    // 如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。 如果一个项目的flex-grow属性为2，其他项目都为		// 1，则前者占据的剩余空间将比其他项多一倍。
+```
+
+###### 	4.3 flex-shrink
+
+​			定义属性的缩小比例 默认为1 （如果空间不足则缩小）
+
+```css
+	.item {
+      flex-shrink: <number>; /* default 1 */
+    }
+    // 如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。 如果一个项目的flex-shrink属性为0，其他项目都为1，     // 则空间不足时，前者不缩小。 负值对该属性无效
+```
+
+###### 	4.4 flex-basis
+
+​			作用 ： 定义了在分配多余空间之前，项目占据的主轴空间		
+
+```
+	.item {
+		flex-basis : <length> | auto
+	} 
+	// 可以设置成固定值（如350px） 那样的话项目将占据固定空间
+```
+
+###### 	4.5 align-self
+
+​		允许单个项目有与其他项目不一样的对其方式，可以覆盖align-item属性 默认值为 auto, 除了auto 其他都和align-item属性完全一致
 
 ##### 2.calc函数
 
