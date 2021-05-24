@@ -1,4 +1,10 @@
-#                                                                       **REACT**
+# **REACT**
+
+## 创建React的项目的命令
+
+```
+npx create-react-app  projectName
+```
 
 ## Hooks
 
@@ -273,7 +279,9 @@ useImperativeHandle(ref, createHandle, [deps])
 
 ## Redux
 
+redux只能处理同步变化 处理异步需要借助中间件如：redux-thunk,  redux-saga   
 
+简单的业务场景使用thunk 复杂的使用saga
 
 ## 关于antd
 
@@ -287,7 +295,9 @@ import "moment/locale/zh-cn" //加上这么一句即可 // 或者使用yarn inst
 </ConfigProvider>
 ```
 
+## 关于文件
 
+**content-type**  ：浏览器会根据这个的值来决定对文件url的处理方式是预览还是下载
 
 ### 一些方法
 

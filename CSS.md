@@ -13,6 +13,59 @@ flex-direction: column;
 
 row-reverse和column-reverse都是把代码块的顺序给反转过来（就是从块最右边开始排）
 
+##### 2.flex的四大概念
+
+​    **容器、项目、主轴、交叉轴**
+
+​	**容器** ： 如果在一个盒子上面，设置了display : flex 那么这个盒子就是一个容器
+
+​	**项目** ： 容器的直接子元素
+
+​	**主轴** ： 在容器中，项目默认是按主轴方向排列，默认是从左向右排列
+
+​	**交叉轴** ： 与主轴垂直的轴
+
+##### 3.容器相关的属性
+
+###### 	1. flex-direction  
+
+​		 改变主轴的方向
+
+```css
+	row // (默认值) 主轴为水平方向  从左到右
+	row-reverse // 主轴方向为水平方向  起点在右端
+	column // 主轴为垂直方向 起点在上沿
+	Column-reverse // 主轴为垂直方向 起点在下沿
+```
+
+###### 	1.2 flex-wrap 
+
+​		项目足够多的时候，是否需要换行
+
+```css
+	wrap // 换行 第一行在上方
+	nowrap // 不换行
+	wrap-reverse // 换行 第一行在下方
+```
+
+###### 	1.3 flex-flow 
+
+​			是 flex-direction和flex-wrap的简写形式  默认值为 row   nowrap
+
+###### 	1.4 justify-content
+
+​			定义了主轴上面的对齐方式		
+
+```
+	flex-start // 默认值 左对齐
+	flex-end // 右对齐
+	center // 居中	
+	space-between // 两端对齐  项目之间的间隔都相等
+	space-around // 每个项目的两侧的间隔都相等 所以项目之间的间隔要比两侧的要大
+```
+
+
+
 ##### 2.calc函数
 
 可以自适应布局  动态计算位置
@@ -41,7 +94,7 @@ height :  calc(100% - 100px)   代表高度为其父元素的整个宽度减去1
 
 ###### 1.2块级元素
 
-​		1.2.1  父元素内设置display ： flex; align-item : center (兼容性比较差)
+​		1.2.1  父元素内设置display ： flex; align-items : center (兼容性比较差)
 
 ​		1.2.2  父元素设置 display ： flex; 子元素设置： align-self : center
 
@@ -285,4 +338,82 @@ list-style-type : // 设置列表标志的类型 (实心圆 空心圆 罗马数�
 ​	盒子模型 ：边距(margin)  边框(border)  填充(padding)  实际内容
 
 ​	整个元素的总宽度 ： 左边距 + 左边框  +  左填充 + 内容宽度 + 右填充 +  右边框 + 右边距
+
+##### 7.边框
+
+```css
+//边框的样式 可以分别设置四个边的样式
+border-style : none //默认值
+			   dashed // 虚线边框
+			   solid //实线边框
+			   double // 两个边框
+			   groove/ridge/inset/outset //定义的3D的边框
+//边框的宽度
+border-style : //需要和border-style配合使用
+//边框的颜色
+border-color 
+// 简写形式 
+border : width style color
+```
+
+##### 8.轮廓（outline）
+
+```
+outline 不占空间 属性和border相似
+```
+
+##### 9.外边距（margin）
+
+清除元素边框外周围的元素区域  没有背景颜色 完全透明  上 右 下 左
+
+##### 10.填充（padding）
+
+定义边框和元素之间的空间
+
+##### 11.分组和嵌套选择器
+
+​	分组选择器 ： 
+
+```css
+h1, h2, p {
+
+} // 选择了所有的h1, h2, p的标签
+```
+
+​	嵌套选择器
+
+```css
+p{ } // 为所有 p 元素指定一个样式。
+.marked{ } // 为所有 class="marked" 的元素指定一个样式。
+.marked p{ } // 为所有 class="marked" 元素内的 p 元素指定一个样式。
+p.marked{ } // 为所有 class="marked" 的 p 元素指定一个样式
+```
+
+##### 12.尺寸（宽和高）
+
+```css
+height :  // 元素的高度
+line-height : // 设置行高
+			  normal // 设置合理的行间距
+			  number // 此数字与当前的字体的尺寸相乘设置行间距
+			  length （px） // 设置固定的行间距
+			  % // 基于当前的字体的尺寸的百分比设置行间距
+			  inherit // 从父元素继承
+max-height : // 元素的最大高度
+max-width : // 元素的最大宽度
+min-height: // 元素的最小高度
+min-width : // 元素的最小宽度
+width : // 元素的宽度
+```
+
+##### 13.Display和Visibililty
+
+```css
+display : // 设置一个元素应该如何显示
+		none // 元素不显示  而且不占空间
+		inline // 内联元素  内联元素只需要必要的宽度，不强制换行
+		block // 块级元素  一个内联元素设置为display:block是不允许有它内部的嵌套块元素
+visibililty : // 设置一个元素该显示还是隐藏
+		hidden // 元素不显示 但是会占空间
+```
 
