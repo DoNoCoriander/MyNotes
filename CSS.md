@@ -78,6 +78,7 @@ row-reverse和column-reverse都是把代码块的顺序给反转过来（就是�
   space-between // 两端对齐  项目之间的间隔都相等
   space-around // 每个项目的两侧的间隔都相等 所以项目之间的间隔要比两侧的要大
 ```
+![image](https://user-images.githubusercontent.com/73156828/119313300-f91d3a00-bca5-11eb-9b15-e76bd89b84c8.png)
 
 ###### 3.6 align-content 
 
