@@ -13,10 +13,10 @@ npx create-react-app  projectName
 ​	作用：全局共享数据(方法)  主要用于组件层级较深并且需要向子组件传值  避免使用props一层层的向下传递
 
 ```javascript
-// 第一步：创建需要共享的context 并可以赋予初始值
-const ThemeContext = React.createContext('light');
+// 第一步：创建需要共享的context 并可以赋予初始值 创建在父组件中
+export const ThemeContext = React.createContext('light');
 // 父组件
-function App (){
+export function App (){
   render() {
     // 第二步：使用 Provider 提供 ThemeContext 的值，Provider所包含的子树都可以直接访问ThemeContext的值
     return (
@@ -26,8 +26,9 @@ function App (){
     );
   }
 }
+
 // Toolbar 组件并不需要透传 ThemeContext
-function Toolbar(props) {
+export function Toolbar(props) {
   return (
     <div>
       <ThemedButton />
@@ -35,7 +36,7 @@ function Toolbar(props) {
   );
 }
 // 深处的子组件
-function ThemedButton(props) {
+export function ThemedButton(props) {
   // 第三步：使用共享 Context
   const theme = useContext(ThemeContext);
     return <Button theme={theme} />;
