@@ -319,3 +319,10 @@ import moment from 'moment'
 ```
 
 #### 2.身份证的校验
+
+GIT网址 : https://github.com/mc-zone/IDValidator 
+
+```react
+npm install id-validator
+```
+
