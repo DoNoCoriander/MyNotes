@@ -10,7 +10,8 @@
 
 ##### 	2.删除无用文件 添加项目的文件结构目录
 
-​		基本目录结构： 		
+​		基本目录结构： 
+
    	![image-20210901165757975](https://user-images.githubusercontent.com/73156828/131849545-1ffcc82f-2b63-4e5c-beba-cc161db0bc1d.png)
 ##### 3.antd
 
