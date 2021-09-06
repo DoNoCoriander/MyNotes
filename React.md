@@ -326,3 +326,7 @@ GIT网址 : https://github.com/mc-zone/IDValidator
 npm install id-validator
 ```
 
+## 注意
+
+1. react自定义.env文件中的环境变量时，变量的名字必须以 **REACT_APP_** 开头
+
