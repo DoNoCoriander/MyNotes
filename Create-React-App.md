@@ -10,10 +10,10 @@
 
 ##### 	2.删除无用文件 添加项目的文件结构目录
 
-​		基本目录结构： 		
+​		基本目录结构： 
+>>>>>>> 0ad3e21d84dd89ddc892f909c01ced188a7b0627
 
-![image-20210901165757975](C:\Users\sqoz2t6\OneDrive-Deere&Co\OneDrive - Deere & Co\Desktop\image-20210901165757975.png)    	
-
+   	![image-20210901165757975](https://user-images.githubusercontent.com/73156828/131849545-1ffcc82f-2b63-4e5c-beba-cc161db0bc1d.png)
 ##### 3.antd
 
 ```
@@ -95,6 +95,7 @@ export default history;
 
 1. 父路由不能添加exact=true, 否则将匹配不到子组件
 2. 子组件的path前面需要和父组件一致，需要先匹配到父组件才能匹配到子组件
+<<<<<<< HEAD
 
 ## 三.axios
 
@@ -365,3 +366,5 @@ npm run mock-api // 启动mock的服务
 
 ## 五.多环境文件的配置
 
+=======
+>>>>>>> 0ad3e21d84dd89ddc892f909c01ced188a7b0627
