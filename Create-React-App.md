@@ -391,7 +391,9 @@ dotenv -e .env.mock react-scripts start
 
 ## 六.run-p
 
-​	并行命令
+​	并行命令 run-p
+
+​	
 
 1. 添加依赖
 
@@ -405,4 +407,6 @@ npm run npm-run-all
 run-p m_start mock-api
 // 启动 m_start 和 maock-api 命令
 ```
+
+## 七.对于一些组件的封装
 

@@ -173,7 +173,7 @@ useImperativeHandle(ref, createHandle, [deps])
     
     less版本过高也会出现问题 可以降低为@2.7
 
-- 在config-overrides文件中增加less文件配置：
+- 在config-overrides.js( 在项目的根目录下面添加此文件 )文件中增加less文件配置：
 
   ```javascript
   const {
@@ -273,6 +273,23 @@ useImperativeHandle(ref, createHandle, [deps])
   console.log(error)
 });
 ```
+
+#### 5.启动命令
+
+```javascript
+"color": "node color.js",
+```
+
+#### 注意：
+
+```react
+// 注意导入文件的顺序 否则可能会被覆盖样式导致样式不完全或者自定义的主题不起效
+@import '~antd/lib/style/themes/default.less';
+@import '~antd/dist/antd.less'; // 引入官方提供的 less 样式入口文件
+@import 'your-theme-file.less'; // 用于覆盖上面定义的变量(自定义的主题样式)
+```
+
+
 
 #### 问题 ： 改变主题后刷新页面页面的主题会变回原来的样子
 
