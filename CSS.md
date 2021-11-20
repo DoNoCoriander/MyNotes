@@ -894,3 +894,37 @@ p:after {
 }
 ```
 
+### 五. CSS技巧
+
+##### 1.透明边框
+
+```css
+background-color: red;
+border: 20px solid rgba(0, 0, 0, 0.5);
+```
+
+​	设置边框的透明度的时候边框的颜色会被内部的背景颜色侵入而不是透出外部的背景颜色 即边框的颜色是透明度为0.5的红色
+
+需要添加**background-clip**属性来设置背景的绘制区域
+
+```css
+background-clip: padding-box;
+// 默认值是border-box
+```
+
+##### 2.多重边框
+
+​	设置两层边框时 可以使用border + outline
+
+```css
+border: 10px solid darkgreen;
+outline: 5px dashed wheat;
+```
+
+​	两层以上的边框时只能使用**box-shadow**来模拟(缺点时只能模拟实线效果)
+
+```css
+box-shadow: 0 0 0 10px greenyellow,
+            0 0 0 20px green;
+```
+
