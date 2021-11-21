@@ -930,3 +930,49 @@ box-shadow: 0 0 0 10px greenyellow,
 
 ##### 3.背景定位
 
+对背景图片的位置添加偏移量
+
+```css
+background: background: url("favicon.png") right 20px bottom 10px no-repeat greenyellow;
+//  背景图片的位置距离右侧有20px 下部有10px
+background-position: right calc(100% - 10px) top calc(100% - 10px)
+
+// 背景图片的位置和内边距有关系时
+background-origin: content-box; // 设置背景图片位置 默认值padding-box
+```
+
+##### 4.边框内圆角
+
+```css
+<div class = "root-div">
+	<div></div>
+</div>
+
+.root-div {
+    padding : 10px;
+    background : red
+}
+
+.root-div {
+    border-radius : 0.8em;
+    background : green;
+}
+```
+
+##### 5.条纹
+
+垂直或者水平条纹
+
+```css
+background: linear-gradient(to right, red 50%, yellow 50%);
+background-size : 30px 100%;
+```
+
+带角度的倾斜条纹
+
+两种颜色就需要四个色标
+
+```css
+background: repeating-linear-gradient(45deg, red, yellow 15px, red 15px, yellow 30px);
+```
+
